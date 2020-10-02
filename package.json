@@ -7,7 +7,7 @@
   },
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/karlmarxlopez/use-toggle-state"
+    "url": "https://github.com/karlmarxlopez/use-state-toggle"
   },
   "keywords": [
     "react",
