@@ -1,2 +1,6 @@
-export type InitialState<T> = boolean | T;
-export type StateToggleTuple<T> = [InitialState<T>, () => void];
+export type TruthyOrFalsy<T, F> = {
+  truthy: T;
+  falsy: F;
+};
+
+export type StateToggleTuple<S> = [S, () => void];
