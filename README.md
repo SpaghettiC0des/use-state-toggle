@@ -4,12 +4,13 @@ There a lot of similar libraries out there, but they only toggle `boolean` state
 
 ### Sample usage
 
+**React Web**
 ```jsx
 import React from 'react';
 import {useStateToggle} from 'use-state-toggle';
 
 const MyComponent = () => {
-  const [switch, toggleSwitch] = useStateToggle(false);
+  const [switchState, toggleSwitch] = useStateToggle(false);
 
   const [didAccept, toggleDidAccept] = useStateToggle('no', {
     truthy: 'yes',
@@ -21,7 +22,7 @@ const MyComponent = () => {
       <button onPress={toggleDidAccept}>
         Toggle Switch
       </button>
-      <h1>Switch is on? {switch}</h1>
+      <h1>Switch is on? {String(switchState)}</h1>
 
       <button onPress={toggleDidAccept}>
         Accept?
@@ -32,6 +33,34 @@ const MyComponent = () => {
 };
 
 export default MyComponent;
+```
+
+**React Native**
+```tsx
+import React from 'react';
+import {useStateToggle} from 'use-state-toggle';
+import {Text, SafeAreaView, Button} from 'react-native';
+
+const UseToggleStateSample = () => {
+  const [switchState, toggleSwitch] = useStateToggle(false);
+
+  const [didAccept, toggleDidAccept] = useStateToggle('no', {
+    truthy: 'yes',
+    falsy: 'no',
+  });
+
+  return (
+    <SafeAreaView style={{flex: 1}}>
+      <Button onPress={toggleDidAccept} title="Accept?" />
+      <Text>You said {didAccept}</Text>
+      <Button onPress={toggleSwitch} title="Toggle Switch" />
+      <Text>Switch is on? {String(switchState)}</Text>
+    </SafeAreaView>
+  );
+};
+
+export default UseToggleStateSample;
+
 ```
 
 ### License
