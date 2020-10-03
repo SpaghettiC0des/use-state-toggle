@@ -20,6 +20,9 @@
     "use state toggle",
     "toggle state"
   ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
